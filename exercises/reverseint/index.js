@@ -9,21 +9,8 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-    let arr = JSON.stringify(n).split('');
-    let neg = false;
-    let result = '';
-    if (arr[0] === '-') {
-      neg = true;
-      arr.shift();
-    }
-    for (let i of arr) {
-      result = i + result;
-    }
-    result = Number(result);
-    if (neg) {
-      result *= -1;
-    }
-    return result;
-  }
+    let str = Math.abs(n).toString().split('').reverse().join('');
+    return Number(str) * Math.sign(n);
+}
 
 module.exports = reverseInt;
