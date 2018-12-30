@@ -12,6 +12,7 @@ function anagrams(stringA, stringB) {
     let str1 = stringA.toLowerCase().replace(/[^a-z]+/g, '').split('');
     let str2 = stringB.toLowerCase().replace(/[^a-z]+/g, '').split('');
     let storage = {};
+    if (str1.length !== str2.length) return false;
     for (let char of str1) {
         storage[char] = storage[char] + 1 || 1;
     }
